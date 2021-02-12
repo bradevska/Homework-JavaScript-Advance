@@ -38,14 +38,14 @@
     this.getGradesAverage=function() {
      
         let sum=0;
-        for( let i=0; i<this.grades.lenght; i++) {
+        for( let i=0; i<this.grades.length; i++) {
             sum += parseInt(this.grades[i],10);
         }
-        let average=sum/this.grades.lenght;
+        let average=sum/this.grades.length;
         let averageGrade = average.toFixed(2);
 
 
-        return `Average grade: ${averageGrade}`;//ne mi pecati nemozam da vidam zasto!!!
+        return `${averageGrade}`;//ne mi pecati nemozam da vidam zasto!!!
         
       
     }
@@ -63,14 +63,22 @@
  
  console.log(student);
  for(let i=0; i<student.lenght; i++) {
-    console.log (`${i+1}.${student[i].getInfo()}  /n  ${student[i].getAge()}  /n  ${Student[i].getGradesAverage()}`);
+    console.log (`${i+1}.${student[i].getInfo()}  /n  ${student[i].getAge()}  /n  ${student[i].getGradesAverage()}`);
 }
  
  
  
-// document.getElementById("name").innerHTML=student1.getInfo();
-// document.getElementById("age").innerHTML="Age of student is" + " " +student1.getAge();
- 
+ document.getElementById("name").innerHTML=student1.getInfo();
+ document.getElementById("age").innerHTML="Age of student is" + " " +student1.getAge();
+ document.getElementById("average").innerHTML="Average of sudent is" + " " + student1.getGradesAverage();
+ document.getElementById("students").innerHTML=`<li>
+                                                    ${student[0].getInfo()}.He is ${student[0].getAge()} years old.
+                                                    Average of student is ${student[0].getGradesAverage()}; <br>
+                                                    ${student[1].getInfo()}.She is ${student[1].getAge()} years old.
+                                                    Average of student is ${student[1].getGradesAverage()}; <br>
+                                                    ${student[2].getInfo()}.She is ${student[2].getAge()} years old.
+                                                    Average of student is ${student[2].getGradesAverage()}; <br>
+                                                </li>`
  
 
  
