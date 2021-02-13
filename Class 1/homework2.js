@@ -30,27 +30,25 @@ buttonSignUp.addEventListener("click",function(){
     let birthYear=inputBirthYear.value;
     let academy=inputAcademy.value;
      
-    for(let i=0; i< students.length; i++) {
         if (!firstName || !lastName || !birthYear || !academy) {
             alert("Please enter corect value",message);
         } else {
             let student=new Student(firstName,lastName,birthYear,academy);
             students.push(student);
             printStudents(students,result);
-            clearForm;
+            clearForm();
 
             console.log(students);
         }
-    }
 });
 
 function printStudents(students,element) {
     element.innerHTML=``;
-
     let html="";
     for (let i=0; i<students.length; i++) {
-        html +=`<p> $(i+1).${students[i].getInfo()}</p>`;
+        html +=`<p> ${(i+1)}.${students[i].getInfo()}</p>`;
     }
+     
     element.innerHTML=html;
 }       
 
