@@ -8,22 +8,30 @@
 
   
   let button = document.getElementById("button");
+  let colorInput = document.getElementById("color");
+  let fontSizeInput = document.getElementById("fontSize");
+  let textInput = document.getElementById("text");
 
 button.addEventListener("click",function() {
   
-  let colorInput = document.getElementById("color").value;
-  let fontSizeInput = document.getElementById("fontSize").value;
-  let textInput = document.getElementById("text").value;
-  document.getElementById("headerText").style.color=colorInput;
-  document.getElementById("headerText").style.fontSize=`${fontSizeInput}px`
-  document.getElementById("headerText").innerHTML = textInput;
+   color = colorInput.value;
+   fontSize = Number(fontSizeInput.value);
+   text = textInput.value;
 
-  clearInputs();//ova sakav da go primenam ali vaka ispisan kodot ne mi funkcionira
+    result.innerHTML=`<h1>${text}</h1>`;
+
+    result.style.color=`${color}`;
+    result.style.fontSize=`${fontSize}px`
+  
+ 
+
+  clearInputs();//promenlivite bea na lokalno nivo,a treba da se na globalno za funkcijata clearInputs da gi cita
+
 });
-
 function clearInputs() {
     colorInput.value = "";
     fontSizeInput.value = "";
     textInput.value = "";
   }
+
 

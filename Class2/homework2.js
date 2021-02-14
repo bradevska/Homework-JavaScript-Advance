@@ -35,7 +35,7 @@ button.addEventListener("click",function() {
     clearInputs();//ovde mi funkcionira ali koga ke dodadam naredni podatoci
     //vo druga boja i drugi px i prethodnite gi prevzemaat istite podatoci:)...da ne 
     //treba negde break da se napravi:)
-    }
+    
 
 });
 
