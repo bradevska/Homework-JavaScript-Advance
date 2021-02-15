@@ -21,7 +21,7 @@
 
  //Exercise 1
 
-$(document).ready(function() {
+ $(document).ready(function() {
     document.getElementById("request").addEventListener("click",function() {
             $.ajax({
                 type:"GET" ,
@@ -37,5 +37,30 @@ $(document).ready(function() {
 
             })
     });
+
+    function printNameOfAcademy (element,response) {
+        let elementDIV= $(element);//("#nameOfAcademy")
+        elementDIV.html("");
+        //for(let i=0; i<response.academy.length; i++) {
+            elementDIV.append(`<h1> ${response.academy} </h1>`);
+        //}
+    }
+    printNameOfAcademy("#nameOfAcademy",response);
+
+    function printNamesOfStudents (element,response) {
+        let elementUL=$(element);//("#nameOfStudents")
+        elementUL.html("");
+        for(let i =0; i<response.studensts.length; i++) {
+            elementUL.append( `<ul>  ${response.studensts.length[i]} </ul>`)
+        }
+
+    }
+    printNamesOfStudents("#nameOfStudents",response);
+
+
+
+
+
+
 
 })
