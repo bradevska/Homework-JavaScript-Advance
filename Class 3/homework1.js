@@ -50,16 +50,3 @@
 
 })
 
-//
-//primer od cas!!!
-//function printElements(response){
-    //let element=$("#astros");
-   // element.html("");
-
-   // for(let i=0;i<response.people.length;i++){
-  //      element.append(`<li>${response.people[i].name}</li>`);
-  //  }
-
-//}
-
-//printElements(response);
