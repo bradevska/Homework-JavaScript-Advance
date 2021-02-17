@@ -12,10 +12,10 @@
 
  $(document).ready(function() {
 
-    function printNameOfAcademy(academy) {
+    function printNameOfAcademy(response) {
         let element1= $("#nameOfAcademy");
         element1.html="";
-        element1.append `Name of academy: ${academy.academy}`
+        element1.append `Name of academy: ${response.academy}`
     }
 
     function printNameOfStudents(response) {
