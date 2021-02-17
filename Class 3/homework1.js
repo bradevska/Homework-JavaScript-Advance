@@ -11,6 +11,21 @@
  //Exercise 1
 
  $(document).ready(function() {
+
+    function printNameOfAcademy(academy) {
+        let element1= $("#nameOfAcademy");
+        element1.html="";
+        element1.append `Name of academy: ${academy}`
+    }
+
+    function printNameOfStudents(response) {
+        let element2 =$("#nameOfStudents");
+        element2.html="";
+        for(let i=0; i < response.students.length; i++) {
+            element2.append (`<li> ${response.students[i]}</li>`)
+        }
+    } 
+    //
     document.getElementById("request").addEventListener("click",function() {
             $.ajax({
                 method:"GET" ,
@@ -20,22 +35,9 @@
                     let responseObject=JSON.parse(response);
                     console.log(responseObject);
                     
-                    function printNameOfAcademy(academy) {
-                        let element1= $("#nameOfAcademy");
-                        element1.html="";
-                        element1.append `Name of academy: ${academy}`
-                    }
-                    printNameOfAcademy("Code");
-                     
-
-                    function printNameOfStudents(response) {
-                        let element2 =$("#nameOfStudents");
-                        element2.html="";
-                        for(let i=0; i < response.students.length; i++) {
-                            element2.append (`<li> ${response.students[i]}</li>`)
-                        }
-                    } 
-                    printNameOfStudents(response);  
+                    
+                    printNameOfAcademy(responseObject);
+                    printNameOfStudents(responseObject);  
                             
                 },         
                 error:function(response){
@@ -48,7 +50,7 @@
 
 })
 
-
+//
 //primer od cas!!!
 //function printElements(response){
     //let element=$("#astros");
