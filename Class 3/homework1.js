@@ -15,7 +15,7 @@
     function printNameOfAcademy(academy) {
         let element1= $("#nameOfAcademy");
         element1.html="";
-        element1.append `Name of academy: ${academy}`
+        element1.append `Name of academy: ${academy.academy}`
     }
 
     function printNameOfStudents(response) {
