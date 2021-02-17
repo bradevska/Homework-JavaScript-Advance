@@ -21,6 +21,7 @@ $(document).ready(function(){
             url: "https://swapi.dev/api/people/1",
             success: function(response) {
                 console.log(response);
+
                 let element1=document.getElementById("personName");
                 element1.innerHTML="";
                 element1.innerHTML += (`${response.name}`);
@@ -67,17 +68,3 @@ $(document).ready(function(){
 })
 
 
-//parsing elements to HTML with VanillaJS(Pure Javascript)
-                // let element= document.getElementById("astros");
-                // element.innerHTML="";
-
-                // for(let i=0;i<response.people.length;i++){
-                //     element.innerHTML+=`<li>${response.people[i].name}</li>`;
-                // }
-
-                //parsing elements to HTML with jQuery
-                // let elementWithJquery=$("#astros");
-                // elementWithJquery.html("");
-                // for(let i=0;i<response.people.length;i++){
-                //     elementWithJquery.append(`<li>${response.people[i].name}</li>`);
-                // }
