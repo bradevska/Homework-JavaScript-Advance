@@ -7,6 +7,7 @@
 //**NOTE:** You need to parse this data before using it.
 
 
+
  //Exercise 1
 
  $(document).ready(function() {
@@ -18,41 +19,45 @@
                     console.log("Request is successfull");
                     let responseObject=JSON.parse(response);
                     console.log(responseObject);
-                },
-                error: function (response) {
-                    console.log("Bad Request");
-            }
+                    
+                    function printNameOfAcademy(academy) {
+                        let element1= $("#nameOfAcademy");
+                        element1.html="";
+                        element1.append `Name of academy: ${academy}`
+                    }
+                    printNameOfAcademy("Code");
+                     
 
-        
-        })
+                    function printNameOfStudents(response) {
+                        let element2 =$("#nameOfStudents");
+                        element2.html="";
+                        for(let i=0; i < response.students.length; i++) {
+                            element2.append (`<li> ${response.students[i]}</li>`)
+                        }
+                    } 
+                    printNameOfStudents(response);  
+                            
+                },         
+                error:function(response){
+                    console.log("The request has failed(Bad Request)");
+                }
 
-            
-    });
-    
+                 
+            })
+    })
 
-    function printNameOfAcademy (response) {
-        let element= $("#nameOfAcademy");//("#nameOfAcademy")
-        element.html("");
-        
-         element.append(`<h1> ${response.academy.name} </h1>`);
-        
-    }
-     printNameOfAcademy(response);
-
-
-     function printNameOfStudents (element,respons) {
-         let list=$("nameOfStudents");
-         list.innerHTML="";
-         for( let i=0;i<students.length; i++) {
-             list.append(`<li> ${response.students[i].name}</li>`);
-         }
-     
-        }
-    
-    printNameOfStudents("#nameOfStudents",response);
-    
+})
 
 
+//primer od cas!!!
+//function printElements(response){
+    //let element=$("#astros");
+   // element.html("");
 
+   // for(let i=0;i<response.people.length;i++){
+  //      element.append(`<li>${response.people[i].name}</li>`);
+  //  }
 
-    });
+//}
+
+//printElements(response);
