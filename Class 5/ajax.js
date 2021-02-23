@@ -15,6 +15,8 @@
 
 
 $(document).ready(function(){
+
+    
     
     document.getElementById("request").addEventListener("click",function() {
        $.ajax({
@@ -24,9 +26,58 @@ $(document).ready(function(){
                 let responseObject=JSON.parse(response);
                 console.log(responseObject);
 
+                //first
+                //* All students with an average grade higher than 3
+                let averageGradeAbove3 = responseObject.filter(student => student.averageGrade > 3);
+                console.log(averageGradeAbove3);
+                
+                //Secound
+                //* All female student names with an average grade of 5"gender":"Female
+                let femaleStudentsGrade5 = responseObject
+                    .filter(student => student.gender === "Female")
+                    .filter(student => student.averageGrade === 5)
+                    .filter(student => student.firstName);
+
+                femaleStudentsGrade5.map(student=>
+                console.log(`${student.firstName} Gender: ${student.gender} Average: ${student.averageGrade}`));
+                
+                //third
+                //* All male student full names who live in Skopje and are over 18 years old  
+                let maleStudentsOver18=responseObject
+                    .filter(student =>student.gender === "Male" )
+                    .filter(student =>student.city ==="Skopje")
+                    .filter(student => student.age > 18);
 
 
-               
+                maleStudentsOver18.map (student =>
+                console.log(`${student.firstName} ${student.lastName} Gender: ${student.gender} ${student.city} ${student.age}`));
+
+
+                //fourth
+                //* The average grades of all female students over the age  of  24  
+                let femaleStudentsAgeOver24 = responseObject
+                .filter(student => student.gender === "Female")
+                .filter(student => student.age > 24);
+
+                femaleStudentsAgeOver24.map(student =>
+                console.log(`Gender: ${student.gender} Age: ${student.age} Average grade:  ${student.averageGrade}`));
+
+                //fifth
+                //* All male students with a name starting with B and average grade over 2
+
+                let maleStudentsStartNameWithB = responseObject
+                .filter(student => student.gender === "Male")
+                .filter(student => student.averageGrade > 2)
+                .filter(student => student.firstName.startsWith("B"));
+
+                maleStudentsStartNameWithB.map(student =>
+                console.log(`${student.gender} ${student.averageGrade} ${student.firstName}`));
+
+                let element = document.getElementById("first");
+                for(student of responseObject) {
+                    element.innerHTML += `${student.gender} ${student.averageGrade} ${student.firstName}<br>`
+                }
+
 
             },
 
