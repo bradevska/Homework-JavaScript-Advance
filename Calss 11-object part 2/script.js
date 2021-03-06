@@ -32,19 +32,19 @@ function Student(firstName,lastName,age,academyName,studentId) {
     //Student of any academy and returns the academy that that student is in.
     this.studentsOfAnyAcademy = function() {
         if(student1.academyName !== "" ) {
-            console.log(`Academy of student is ${this.academyName}`)
+            console.log(`Student ${this.firstName} is from academy of ${this.academyName}`)
         } else {
             console.log("Enter correct Academy Name")
         }
     }
 }
 
-let student1 = new Student("Biba", "Radevska" ,35, "", 1);
+let student1 = new Student("Biba", "Radevska" ,35, "FINKI", 1);
 console.log(student1);
 let student2 = new Student("Vesna", "Minovska", 28, "SEDEC", 5);
 console.log(student2);
 console.log(student1.academyName);
-student1.studentsOfAnyAcademy();
+console.log(student2.academyName);
 
 
 //## Exercise 2
@@ -133,3 +133,12 @@ function AllStudents(firstName,lastName,age,academyName,studentId) {
 }
 let all = new AllStudents("Sofija", "Lazarova",25,"Sedec", 5);
 all.studentsChecking();
+
+student1.studentsOfAnyAcademy();
+student2.studentsOfAnyAcademy();
+
+
+//Првото барање е исполнето, 
+//а второто барање е соодветно да се врати студентот во 
+//која академија членува со методата од темплејтот 
+//Student(ова треба да се доработи). Од делот кој што не ти е јасно што да се доработи.
